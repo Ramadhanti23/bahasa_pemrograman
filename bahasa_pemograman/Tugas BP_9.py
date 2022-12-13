@@ -9,7 +9,6 @@ print(" b = ", b)
 def reserveArray(array):
     awal, akhir = 0, len(array) - 1
     while awal<akhir:
-        array[awal], array[akhir] = array[akhir], array[awal]
         awal +=1
         akhir -=1
         
