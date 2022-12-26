@@ -5,7 +5,7 @@ mydb = mysql.connector.connect(
   port=23306,
   user="root",
   password="p455w0rd",
-  database="garden"
+  # database="garden"
 )
 
 #print(mydb)
@@ -31,3 +31,11 @@ for x in db:
 db.execute("Show databases")
 for x in db:
   print(x)
+
+
+
+
+
+
+
+

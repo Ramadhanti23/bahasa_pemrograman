@@ -134,7 +134,7 @@ def pilih(jenis,*args):
     btn_beriAir = ttk.Button(frm,text="1.Beri Air",command=lambda: [akhir(dataShow,jenis,btn_beriAir,info)])
     btn_beriAir.pack(padx=10,pady=5,fil="x",expand=True)
 
-    btn_beriPupuk = ttk.Button(frm,text="2.Beri Pupuk",command=lambda : akhir(dataShow,jenis,btn_beriPupuk,info))
+    btn_beriPupuk = ttk.Button(frm,text="2.Beri Pupuk",command=lambda : [akhir(dataShow,jenis,btn_beriPupuk,info)])
     btn_beriPupuk.pack(padx=10,pady=5,fil="x",expand=True)
 
     btn_exit2 = ttk.Button(frm, text="3.Exit",command=lambda: [main(judul2,btn_beriAir,btn_beriPupuk,btn_exit2,info,dataShow)])
