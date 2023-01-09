@@ -89,28 +89,6 @@ bunga1 = Anggrek("Anggrek")
 bunga2 = Mawar("Mawar")
 bunga3 = Melati("Melati")
 
-def data(Showinfo,jenis, messagebox):
-    if jenis != "Tanaman Besar" and jenis != "Berbunga":
-        if "1.Beri Air" in messagebox["text"]:
-            if jenis.getJumlahAir < 3:
-                jenis.beriAi
-                messagebox["text"]= "Ayo input"
-            else:
-                messagebox["text"] = "Info : berhasil!"
-
-        elif "2.Beri Pupuk" in messagebox["text"]:
-            if jenis.getJumlahPupuk < 1:
-                jenis.beriPupuk()
-                messagebox["text"] = "Ayo input"
-            else:
-                messagebox["text"] = "Info : berhasil"
-    else:
-        messagebox["text"] = f"{jenis.getJenis()} Tanaman Behasil"
-        jenis.setStatusberbunga
-
-    Showinfo["text"] = f"{jenis.tampil}"
-
-
 window = tk.Tk()
 window.configure(bg="gray")
 window.geometry("450x500")
@@ -118,31 +96,21 @@ window.geometry("450x500")
 frm =ttk.Frame(window,padding="50")
 frm.pack(padx=70,pady=40,fil="x",expand=True)
 
-input_frame = ttk.Frame(window)
-input_frame.pack(padx=10, pady=10, fill="x", expand=True)
 
 def pilihan(*args):
     for i in args:
         i.destroy()
         
     def beri_air():
-        messagebox.showinfo("Beri Air", "Beri Air berhasil")
-    
+        messagebox.showinfo("Beri Air berhasil", "tumbuhan Benih")
         
-    judul2 = ttk.Label(frm, text=f" Beri Air ")
-    judul2.pack(padx="10",pady="10",fil="x",expand=True)
-        
-    btn_air = ttk.Button(frm, text="1.Beri Air", command=lambda )
+    btn_air = ttk.Button(frm, text="1.Beri Air", command=beri_air)
     btn_air.pack(padx=10,pady=10,fil="x",expand=True)
       
 
     
     def beri_pupuk():
-        messagebox.showinfo(" Beri pupuk ", "Beri Pupuk Berhasil")
-    
-           
-    judul2 = ttk.Label(frm, text=f" Beri Pupuk  ")
-    judul2.pack(padx="10",pady="10",fil="x",expand=True)
+        messagebox.showinfo(" Beri pupuk  berhasil", "tumbuhan Benih")
 
     btn_pupuk = ttk.Button(frm,text="2.Beri Pupuk", command=beri_pupuk)
     btn_pupuk.pack(padx=10,pady=10,fil="x",expand=True)
@@ -150,30 +118,17 @@ def pilihan(*args):
     btn_exit2 = ttk.Button(frm,text="3.Exit",command=window.destroy)
     btn_exit2.pack(padx=10,pady=10,fil="x",expand=True)
     
-
-# window = tk.Tk()
-# window.configure(bg="gray")
-# window.geometry("450x500")
-
-# print(tanaman1.jumlah_air)
-
-# frm =ttk.Frame(window,padding="50")
-# frm.pack(padx=70,pady=40,fil="x",expand=True)
-
-
+    
 btn_a = ttk.Button(frm,text="1.Anggrek",command=lambda : pilihan(btn_a,btn_m,btn_mel,btn_exit))
 btn_a.pack(padx=10,pady=10,fil="x",expand=True)
 
 btn_m = ttk.Button(frm,text="2.Mawar", command=lambda : pilihan(btn_a,btn_m,btn_mel,btn_exit))
 btn_m.pack(padx=10,pady=10,fil="x",expand=True)
 
-btn_mel = ttk.Button(frm,text="3.Melati")
+btn_mel = ttk.Button(frm,text="3.Melati", command=lambda : pilihan(btn_a,btn_m,btn_mel,btn_exit))
 btn_mel.pack(padx=10,pady=10,fil="x",expand=True)
 
 btn_exit = ttk.Button(frm,text="4.Exit",command=window.destroy)
 btn_exit.pack(padx=10,pady=10,fil="x",expand=True)
 
 window.mainloop()
-
-# if __name__ == "__main__":
-#     main()
